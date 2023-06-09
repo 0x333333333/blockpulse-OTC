@@ -14,8 +14,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 16px;
-    padding: 16px;
+    gap: 0.3em;
+    padding: 0.3em;
     background-color: #006590;
     border-radius: 14px;
   }
@@ -27,7 +27,7 @@
   }
 
   .select select {
-    width: 68px;
+    width: 5em;
     height: 30px;
     padding: 5px;
     background-color: #006590;
