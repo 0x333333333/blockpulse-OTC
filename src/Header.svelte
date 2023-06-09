@@ -40,7 +40,13 @@
   font-size: 1.1em; /* 或者根據你的設計設置適當的字體大小 */
 }
 
+.grey {
+  color : #444444;
+
+}
 </style>
+
+
 
 <header class={isFixed ? 'header fixed' : 'header'}>
   <div class="header-content">
@@ -49,4 +55,6 @@
     </div>
     <h1 class="company-name">Blockpulse OTC</h1>
   </div>
+  <p class="grey">Zero fees. Tight spreads. Fast settlement.</p>
+
 </header>
