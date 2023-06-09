@@ -3,6 +3,7 @@
   // import viteLogo from '/vite.svg'
   // import Counter from './lib/Counter.svelte'
   import Header from './Header.svelte'
+  import Body from './Body.svelte'
 
   
 </script>
@@ -10,16 +11,8 @@
 
 <main>
   <Header/>
+  <Body/>
 
-
-
-
-    <!-- <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a> -->
 
 
 
