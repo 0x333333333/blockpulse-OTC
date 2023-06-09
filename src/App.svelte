@@ -7,7 +7,7 @@
 </script>
 
 <main>
-  <div>
+  <div class="header1">
 
 
     <!-- <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
@@ -38,6 +38,11 @@
 
 
 <style>
+  .header1{
+    width: 100%;
+  }
+
+
   .logo {
     height: 6em;
     padding: 1.5em;
