@@ -16,14 +16,14 @@
 </script>
 
 <style>
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    z-index: 9999;
-  }
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  z-index: 9999;
+}
 
 .header-content {
   display: flex;
@@ -32,7 +32,15 @@
 }
 
 .logo {
-  margin-right: 8px; /* 或者根據你的設計設置適當的右邊距 */
+  margin-right: 8px;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 1em #8CFFFBaa);
+}
+.logo.svelte:hover {
+  filter: drop-shadow(0 0 1em #8CFFFBaa);
 }
 
 .company-name {
