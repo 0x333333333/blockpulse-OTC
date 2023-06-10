@@ -45,11 +45,13 @@
     border-radius: 4px;
     border: 1px solid #444444;
     color: white;
+    transition: background-color 0.25s;
   }
   select:hover {
     font-weight: bold;
     color: #242526;
     background-color: rgba(140, 255, 251, 0.9);
+    filter: drop-shadow(0 0 1em #8CFFFBaa)
   }
   .input {
     flex: 1;
@@ -60,11 +62,13 @@
     border: 1px solid #444444;
     color: white;
     text-align: center;
+    transition: background-color 0.25s;
   }
   input:hover {
     font-weight: bold;
     color: #242526;
     background-color: rgba(140, 255, 251, 0.9);
+    filter: drop-shadow(0 0 1em #8CFFFBaa)
   }
   .grey {
     color: #444444;
