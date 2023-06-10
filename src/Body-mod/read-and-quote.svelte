@@ -15,9 +15,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center; /* 添加居中对齐 */
-    padding: 0.3em;
-    /* background-color: #006590; */
+    justify-content: center;
+    padding: 0.6em;
     border: 1px solid #8CFFFB;
     border-radius: 14px;
   }
@@ -47,7 +46,11 @@
     border: 1px solid #444444;
     color: white;
   }
-
+  select:hover {
+    font-weight: bold;
+    color: #242526;
+    background-color: rgba(140, 255, 251, 0.9);
+  }
   .input {
     flex: 1;
     width: 39px;
@@ -58,7 +61,11 @@
     color: white;
     text-align: center;
   }
-
+  input:hover {
+    font-weight: bold;
+    color: #242526;
+    background-color: rgba(140, 255, 251, 0.9);
+  }
   .grey {
     color: #444444;
   }
