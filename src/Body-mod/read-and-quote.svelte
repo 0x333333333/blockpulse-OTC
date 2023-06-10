@@ -7,6 +7,38 @@
   let selectedOption2 = crypto[0];
   let inputValue = '';
   let outputValue = '';
+
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
+
+  let BTCask = '';
+  let BTCbid = '';
+  let ETHask = '';
+  let ETHbid = '';
+
+  async function fetchBTC() {
+    const response = await fetch('https://api.bybit.com/v5/market/orderbook?category=spot&limit=1&symbol=BTCUSDT');
+    const data = await response.json();
+    if (data.retCode === 0) {
+      BTCask = data.result.a[0][0];
+      BTCbid = data.result.b[0][0];
+    }
+  }
+  async function fetchETH() {
+    const response = await fetch('https://api.bybit.com/v5/market/orderbook?category=spot&limit=1&symbol=ETHUSDT');
+    const data = await response.json();
+    if (data.retCode === 0) {
+      ETHask = data.result.a[0][0];
+      ETHbid = data.result.b[0][0];
+    }
+  }
+
+  onMount(() => {
+    fetchBTC(); // 初始化数据
+    const interval = setInterval(() => {fetchBTC();}, 5000); // 每5秒更新
+    return () => {clearInterval(interval);}; // 组件销毁时清除定时器
+  });
+  
 </script>
 
 <style>
