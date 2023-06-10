@@ -1,20 +1,31 @@
 <script>
+  import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
+
   let act =  ['BUY', 'SELL'];
   let fiat = ['HKD', 'USD'];
   let crypto = ['BTC', 'ETH', 'USDT'];
-  let selectedOption0 = act[0];  
-  let selectedOption1 = fiat[0];
-  let selectedOption2 = crypto[0];
+
+  let actOption = act[0];  
+  let fiatOption = fiat[0];
+  let cryptoOption = crypto[0];
   let inputValue = '';
   let outputValue = '';
-
-  import { onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
 
   let BTCask = 0;
   let BTCbid = 0;
   let ETHask = 0;
   let ETHbid = 0;
+
+  let showNewContainer = false;
+
+  function createNewContainer() {
+    showNewContainer = true;
+
+    setTimeout(() => {
+      showNewContainer = false;
+    }, 30000);
+  }
 
   async function fetchBTC() {
     const response = await fetch('https://api.bybit.com/v5/market/orderbook?category=spot&limit=1&symbol=BTCUSDT');
@@ -126,7 +137,7 @@
 <div class="container">
 
   <div class="select">
-    <select bind:value={selectedOption0}>
+    <select bind:value={actOption}>
       {#each act as option}
         <option value={option}>{option}</option>
       {/each}
@@ -136,7 +147,7 @@
     <input class="input" type="number" bind:value={inputValue} />
 
   <div class="select">
-    <select bind:value={selectedOption1}>
+    <select bind:value={fiatOption}>
       {#each crypto as option}
         <option value={option}>{option}</option>
       {/each}
@@ -148,7 +159,7 @@
   <p class="white">WITH</p>
 
   <div class="select">
-    <select bind:value={selectedOption2}>
+    <select bind:value={cryptoOption}>
       {#each fiat as option}
         <option value={option}>{option}</option>
       {/each}
@@ -162,3 +173,11 @@
 <br><button>Quote</button>
 
 </div>
+
+
+{#if showNewContainer}
+  <div class="big-container new-container" transition:fade>
+    <h3>New Container</h3>
+    <p>This is the new container.</p>
+  </div>
+{/if}
