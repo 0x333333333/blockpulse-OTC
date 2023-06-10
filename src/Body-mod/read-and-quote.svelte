@@ -207,8 +207,8 @@
 
 {#if showNewContainer}
   <div class="big-container new-container" transition:fade>
-    <h3>New Container</h3>
-    <p>This is the new container.</p>
+    <h3>Buying X BTC</h3>
+    <p>with Y HKD</p>
     <p>Countdown: {countdown}s</p>
   </div>
 {/if}
