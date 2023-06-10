@@ -60,7 +60,7 @@ button {
 }
 button:hover {
   color: #242526;
-  background-color: #ffffff;
+  background-color: rgba(140, 255, 251, 0.9);
 }
 button:focus,
 button:focus-visible {
