@@ -17,7 +17,8 @@
     align-items: center;
     justify-content: center; /* 添加居中对齐 */
     padding: 0.3em;
-    background-color: #006590;
+    /* background-color: #006590; */
+    border: 1px solid #8CFFFB;
     border-radius: 14px;
   }
   .container {
@@ -41,7 +42,7 @@
     width: 100%;
     height: 100%;
     padding: 4px;
-    background-color: #006590;
+    background-color: rgba(140, 255, 251, 0.1);
     border-radius: 4px;
     border: 1px solid #444444;
     color: white;
@@ -51,7 +52,7 @@
     flex: 1;
     width: 39px;
     height: 1.6em;
-    background-color: #006590;
+    background-color: rgba(140, 255, 251, 0.1);
     border-radius: 4px;
     border: 1px solid #444444;
     color: white;

@@ -41,7 +41,7 @@
 }
 
 .grey {
-  color : #444444;
+  color : rgba(140, 255, 251, 0.3);
 }
 
 </style>
