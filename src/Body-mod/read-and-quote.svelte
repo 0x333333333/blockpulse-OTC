@@ -65,8 +65,12 @@
 </script>
 
 <style>
-
-
+  .container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
   .big-container {
     display: flex;
     flex-wrap: wrap;
@@ -150,7 +154,7 @@
   }
 </style>
 
-
+<div class="container-wrapper">
 
 <h3>BTC : $ {Math.round(BTCbid * 0.99)} / $ {Math.round(BTCask * 1.01)} </h3>
 <h3>ETH : $ {Math.round(ETHbid * 0.99)} / $ {Math.round(ETHask * 1.01)} </h3>
@@ -208,3 +212,4 @@
     <p>Countdown: {countdown}s</p>
   </div>
 {/if}
+</div>
