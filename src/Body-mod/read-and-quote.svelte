@@ -18,14 +18,22 @@
   let ETHbid = 0;
 
   let showNewContainer = false;
+  let countdown = 30;
+  let countdownInterval;
 
   function createNewContainer() {
     showNewContainer = true;
 
-    setTimeout(() => {
-      showNewContainer = false;
-    }, 30000);
+    countdown = 30;
+    countdownInterval = setInterval(() => {
+      countdown--;
+      if (countdown === 0) {
+        clearInterval(countdownInterval);
+        showNewContainer = false;
+      }
+    }, 1000);
   }
+  
 
   async function fetchBTC() {
     const response = await fetch('https://api.bybit.com/v5/market/orderbook?category=spot&limit=1&symbol=BTCUSDT');
@@ -46,10 +54,12 @@
 
   onMount(() => {
     fetchBTC(); fetchETH();// 初始化数据
-    const interval = setInterval(() => {fetchBTC();}, 5000); // 每5秒更新
+    const interval = setInterval(() => {fetchBTC();}, 5000); // 5秒更新
     const interval1 = setInterval(() => {fetchETH();}, 5000);
-    return () => {clearInterval(interval);}; // 组件销毁时清除定时器
-    return () => {clearInterval(interval1);};
+    return () => {
+      clearInterval(interval);
+      clearInterval(interval1);
+    };
   });
   
 </script>
@@ -122,6 +132,21 @@
     color: #ffffff;
     font-size: 16px;
   }
+
+
+    .new-container {
+    animation: fade 0.4s;
+    transition: opacity 0.4s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 </style>
 
 
@@ -170,14 +195,15 @@
 
 </div>
 
-<br><button>Quote</button>
+<br><button on:click={createNewContainer}>Quote</button>
 
-</div>
+</div><br>
 
 
 {#if showNewContainer}
   <div class="big-container new-container" transition:fade>
     <h3>New Container</h3>
     <p>This is the new container.</p>
+    <p>Countdown: {countdown}s</p>
   </div>
 {/if}
