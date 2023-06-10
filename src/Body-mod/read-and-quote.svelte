@@ -69,7 +69,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 90px;
   }
   .big-container {
     display: flex;
