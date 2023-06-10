@@ -23,6 +23,7 @@
   width: 100%;
   padding: 10px;
   z-index: 9999;
+  background-color: #242526;
 }
 
 .header-content {
