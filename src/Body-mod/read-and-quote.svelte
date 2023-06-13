@@ -69,7 +69,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 90px;
+  margin-top: 120px;
 }
 .big-container {
   display: flex;
@@ -213,14 +213,14 @@ input:hover {
 
 
 {#if showNewContainer}
-  <div class="content" transition:fade>
+  <div class="content">
     <h3>Buying X BTC with Y HKD</h3>
     <p>Countdown: {countdown}s</p>
     <button class="execute-button" on:click={createNewContainer}>Execute</button> <br>
     <button class="execute-button" on:click={() => {showNewContainer = false;}}>Cancel</button>
   </div>
 {:else}
-  <br><button on:click={createNewContainer} transition:fade>Quote</button>
+  <br><button on:click={createNewContainer}>Quote</button>
 {/if}
 
 </div><br>
