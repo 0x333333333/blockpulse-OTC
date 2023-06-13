@@ -165,7 +165,7 @@ input:hover {
 </style>
 
 
-
+<div class="container-wrapper">
 
 {#if showNewContainer}
 
@@ -177,8 +177,6 @@ input:hover {
   </div></div>
 
 {:else}
-
-  <div class="container-wrapper">
 
   <div class="big-container">
 
@@ -214,10 +212,10 @@ input:hover {
     <p class="white">BY NOW</p>
   </div>
 
-  <br><button on:click={createNewContainer}>Quote</button></div><br></div>
+  <br><button on:click={createNewContainer}>Quote</button></div><br>
 
 {/if}
 
-
+</div>
 
 
