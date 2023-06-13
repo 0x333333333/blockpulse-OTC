@@ -10,7 +10,6 @@
   let fiatOption = fiat[0];
   let cryptoOption = crypto[0];
   let inputValue = '';
-  let outputValue = '';
 
   let BTCask = 0;
   let BTCbid = 0;
@@ -170,7 +169,7 @@ input:hover {
 {#if showNewContainer}
 
   <div class="content">
-    <h3>Buying X BTC with Y HKD</h3>
+    <h3>{actOption} {inputValue} {cryptoOption} with X {fiatOption}</h3>
     <p>Countdown: {countdown}s</p>
     <button class="execute-button" on:click={createNewContainer}>Execute</button> <br>
     <button class="execute-button" on:click={() => {showNewContainer = false;}}>Cancel</button>
