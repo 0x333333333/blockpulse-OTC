@@ -165,20 +165,19 @@ input:hover {
 </style>
 
 
-<div class="container-wrapper">
+<div class="container-wrapper"><div class="big-container">
 
 {#if showNewContainer}
 
-  <div class="big-container"><div class="content">
+  <div class="content">
     <h3>Buying X BTC with Y HKD</h3>
     <p>Countdown: {countdown}s</p>
     <button class="execute-button" on:click={createNewContainer}>Execute</button> <br>
     <button class="execute-button" on:click={() => {showNewContainer = false;}}>Cancel</button>
-  </div></div>
+  </div>
 
 {:else}
 
-  <div class="big-container">
 
   <div class="container">
 
@@ -212,10 +211,10 @@ input:hover {
     <p class="white">BY NOW</p>
   </div>
 
-  <br><button on:click={createNewContainer}>Quote</button></div><br>
+  <br><button on:click={createNewContainer}>Quote</button>
 
 {/if}
 
-</div>
+</div></div>
 
 
