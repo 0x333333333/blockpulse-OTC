@@ -69,7 +69,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 120px;
+  margin-top: 0px;
 }
 .big-container {
   display: flex;
@@ -166,15 +166,23 @@ input:hover {
 
 
 
-<div class="container-wrapper">
 
-<!-- <h3>BTC : $ {Math.round(BTCbid * 0.99)} / $ {Math.round(BTCask * 1.01)} </h3>
-<h3>ETH : $ {Math.round(ETHbid * 0.99)} / $ {Math.round(ETHask * 1.01)} </h3> -->
+{#if showNewContainer}
 
-<div class="big-container">
+  <div class="big-container"><div class="content">
+    <h3>Buying X BTC with Y HKD</h3>
+    <p>Countdown: {countdown}s</p>
+    <button class="execute-button" on:click={createNewContainer}>Execute</button> <br>
+    <button class="execute-button" on:click={() => {showNewContainer = false;}}>Cancel</button>
+  </div></div>
 
+{:else}
 
-<div class="container">
+  <div class="container-wrapper">
+
+  <div class="big-container">
+
+  <div class="container">
 
   <div class="select">
     <select bind:value={actOption}>
@@ -184,7 +192,7 @@ input:hover {
     </select>
   </div>
 
-    <input class="input" type="number" bind:value={inputValue} />
+  <input class="input" type="number" bind:value={inputValue} />
 
   <div class="select">
     <select bind:value={fiatOption}>
@@ -194,36 +202,22 @@ input:hover {
     </select>
   </div></div>
 
-
-<div class="container">
-  <p class="white">WITH</p>
-
-  <div class="select">
-    <select bind:value={cryptoOption}>
-      {#each fiat as option}
-        <option value={option}>{option}</option>
-      {/each}
-    </select>
+  <div class="container">
+    <p class="white">WITH</p>
+      <div class="select">
+        <select bind:value={cryptoOption}>
+          {#each fiat as option}
+            <option value={option}>{option}</option>
+          {/each}
+        </select>
+      </div>
+    <p class="white">BY NOW</p>
   </div>
 
-  <p class="white">BY NOW</p>
+  <br><button on:click={createNewContainer}>Quote</button></div><br></div>
 
-</div>
-
-
-
-{#if showNewContainer}
-  <div class="content">
-    <h3>Buying X BTC with Y HKD</h3>
-    <p>Countdown: {countdown}s</p>
-    <button class="execute-button" on:click={createNewContainer}>Execute</button> <br>
-    <button class="execute-button" on:click={() => {showNewContainer = false;}}>Cancel</button>
-  </div>
-{:else}
-  <br><button on:click={createNewContainer}>Quote</button>
 {/if}
 
-</div><br>
 
-</div>
+
 
