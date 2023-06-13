@@ -62,7 +62,6 @@
     <div class="logo">
       <BP_logo/>
     </div>
-    <h1 class="company-name">Blockpulse OTC</h1>
   </div>
   <p class="grey">Zero fees. Tight spreads. Fast settlement.</p>
 
