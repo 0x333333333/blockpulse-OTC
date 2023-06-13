@@ -65,101 +65,111 @@
 </script>
 
 <style>
-  .container-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 90px;
-  }
-  .big-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 0.6em;
-    border: 1px solid #8CFFFB;
-    border-radius: 14px;
-  }
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-    gap: 0.1em;
-    padding: 0.3em;
-    border-radius: 14px;
-  }
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
+}
+.big-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em;
+  border: 1px solid #8CFFFB;
+  border-radius: 14px;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  gap: 0.1em;
+  padding: 0.3em;
+  border-radius: 14px;
+}
 
-  .select {
-    flex: 1;
-    max-width: 300px;
-    height: 1.6em;
-    padding: 0.1em;
-  }
+.new-container {
+  animation: fade 0.4s;
+  transition: opacity 0.4s;
+  margin-top: 1em;
+  text-align: center;
+}
 
-  .select select {
-    width: 100%;
-    height: 100%;
-    padding: 4px;
-    background-color: rgba(140, 255, 251, 0.1);
-    border-radius: 4px;
-    border: 1px solid #444444;
-    color: white;
-    transition: background-color 0.25s;
-  }
-  select:hover {
-    font-weight: bold;
-    color: #242526;
-    background-color: rgba(140, 255, 251, 0.9);
-    filter: drop-shadow(0 0 1em #8CFFFBaa)
-  }
-  .input {
-    flex: 1;
-    width: 39px;
-    height: 1.6em;
-    background-color: rgba(140, 255, 251, 0.1);
-    border-radius: 4px;
-    border: 1px solid #444444;
-    color: white;
-    text-align: center;
-    transition: background-color 0.25s;
-  }
-  input:hover {
-    font-weight: bold;
-    color: #242526;
-    background-color: rgba(140, 255, 251, 0.9);
-    filter: drop-shadow(0 0 1em #8CFFFBaa)
-  }
-  .grey {
-    color: #444444;
-  }
-  .white {
-    color: #ffffff;
-    font-size: 16px;
-  }
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select {
+  flex: 1;
+  max-width: 300px;
+  height: 1.6em;
+  padding: 0.1em;
+  text-align: center;
+}
+
+.select select {
+  width: 100%;
+  height: 100%;
+  padding: 4px;
+  background-color: rgba(140, 255, 251, 0.1);
+  border-radius: 4px;
+  border: 1px solid #444444;
+  color: white;
+  transition: background-color 0.25s;
+  text-align: center;
+}
+select:hover {
+  font-weight: bold;
+  color: #242526;
+  background-color: rgba(140, 255, 251, 0.9);
+  filter: drop-shadow(0 0 1em #8CFFFBaa)
+}
+.input {
+  flex: 1;
+  width: 39px;
+  height: 1.6em;
+  background-color: rgba(140, 255, 251, 0.1);
+  border-radius: 4px;
+  border: 1px solid #444444;
+  color: white;
+  text-align: center;
+  transition: background-color 0.25s;
+}
+input:hover {
+  font-weight: bold;
+  color: #242526;
+  background-color: rgba(140, 255, 251, 0.9);
+  filter: drop-shadow(0 0 1em #8CFFFBaa)
+}
+.grey {
+  color: #444444;
+}
+.white {
+  color: #ffffff;
+  font-size: 16px;
+}
 
 
-    .new-container {
-    animation: fade 0.4s;
-    transition: opacity 0.4s;
+@keyframes fade {
+  from {
+    opacity: 0;
   }
-
-  @keyframes fade {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  to {
+    opacity: 1;
   }
+}
 </style>
+
+
 
 <div class="container-wrapper">
 
-<h3>BTC : $ {Math.round(BTCbid * 0.99)} / $ {Math.round(BTCask * 1.01)} </h3>
-<h3>ETH : $ {Math.round(ETHbid * 0.99)} / $ {Math.round(ETHask * 1.01)} </h3>
-
-
+<!-- <h3>BTC : $ {Math.round(BTCbid * 0.99)} / $ {Math.round(BTCask * 1.01)} </h3>
+<h3>ETH : $ {Math.round(ETHbid * 0.99)} / $ {Math.round(ETHask * 1.01)} </h3> -->
 
 <div class="big-container">
 
@@ -200,16 +210,20 @@
 
 </div>
 
-<br><button on:click={createNewContainer}>Quote</button>
-
-</div><br>
 
 
 {#if showNewContainer}
-  <div class="big-container new-container" transition:fade>
-    <h3>Buying X BTC</h3>
-    <p>with Y HKD</p>
+  <div class="content" transition:fade>
+    <h3>Buying X BTC with Y HKD</h3>
     <p>Countdown: {countdown}s</p>
+    <button class="execute-button" on:click={createNewContainer}>Execute</button> <br>
+    <button class="execute-button" on:click={() => {showNewContainer = false;}}>Cancel</button>
   </div>
+{:else}
+  <br><button on:click={createNewContainer} transition:fade>Quote</button>
 {/if}
+
+</div><br>
+
 </div>
+
