@@ -4,7 +4,7 @@
   import Body from './Body.svelte'
   import LIST from './menu_list.svelte'
 
-  let list = 1;
+  let page = 1;
 
 </script>
 
