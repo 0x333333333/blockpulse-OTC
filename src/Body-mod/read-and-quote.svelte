@@ -100,6 +100,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: 300px;
+  width:300px;
 }
 
 .select {
@@ -191,7 +193,7 @@ input:hover {
   <input class="input" type="number" bind:value={inputValue} />
 
   <div class="select">
-    <select bind:value={fiatOption}>
+    <select bind:value={cryptoOption}>
       {#each crypto as option}
         <option value={option}>{option}</option>
       {/each}
@@ -201,7 +203,7 @@ input:hover {
   <div class="container">
     <p class="white">WITH</p>
       <div class="select">
-        <select bind:value={cryptoOption}>
+        <select bind:value={fiatOption}>
           {#each fiat as option}
             <option value={option}>{option}</option>
           {/each}
