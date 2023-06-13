@@ -63,6 +63,6 @@
       <BP_logo/>
     </div>
   </div>
-  <p class="grey">Zero fees. Tight spreads. Fast settlement.</p>
+  <!-- <p class="grey">Zero fees. Tight spreads. Fast settlement.</p> -->
 
 </header>
