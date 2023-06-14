@@ -60,14 +60,13 @@
   color: white;
   font-size: 0.8em;
 }
-p:hover {
-  filter: drop-shadow(0 0 1em #8CFFFBaa)
-}
+
 </style>
 
 <div class="big-wrapper">
 <!-- <h2>🌐 BlockPul​​se 場外交易🌐</h2> -->
-<p>💼歡迎來到更順暢的交易體驗💼</p>
+
+<p>💼 歡迎體驗更順暢的 OTC 交易 💼</p>
 <p class="small_white">通過 BlockPul​​se OTC 擁抱加密交易的未來。<br>享受實體場所交易的便利和安全。</p><br>
 <button>🚀 開始 ➜</button>
 <p>➖➖➖➖➖➖➖➖➖➖➖➖➖</p>
@@ -89,18 +88,16 @@ p:hover {
   {#if TT3} <div class="tooltip">全面且用戶友好的交易儀表板，可實現高效交易</div> {/if}
 </div>
 <div class="container" on:mouseenter={() => (TT4 = true)}
-  on:mouseleave={() => (TT3 = false)}> <BA/> <p>詢價報價系統</p>
-  {#if TT3} <div class="tooltip">全面且用戶友好的交易儀表板，可實現高效交易</div> {/if}
+  on:mouseleave={() => (TT4 = false)}> <BA/> <p>詢價報價系統</p>
+  {#if TT4} <div class="tooltip">為您的交易請求接收實時準確的報價</div> {/if}
+</div>
+<div class="container" on:mouseenter={() => (TT5 = true)}
+  on:mouseleave={() => (TT5 = false)}> <BA/> <p>推薦計劃</p>
+  {#if TT5} <div class="tooltip">邀請您的朋友使用 BlockPul​​se OTC 進行交易並獲得獎勵以及高達 30% 的現金或加密佣金</div> {/if}
 </div>
 
-
 </div>
 
-
-<p>4. 📝詢價報價系統
-<p>為您的交易請求接收實時準確的報價。了解更多 ➜
-<p>5. 🎁推薦計劃
-<p>邀請您的朋友使用 BlockPul​​se OTC 進行交易並獲得獎勵以及高達 30% 的現金或加密佣金。了解更多 ➜
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 📚關於我們📚
 在 BlockPul​​se OTC，我們的使命是讓每個人都能交易加密貨幣，提供世界一流的 OTC 交易體驗。閱讀更多 ➜

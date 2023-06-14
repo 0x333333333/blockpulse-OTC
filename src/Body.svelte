@@ -23,7 +23,7 @@
 <style>
   .list {
     position: fixed;
-    top: 60px;
+    top: 68px;
     left: 40px;
     width: 100%;
     gap: 30px;
@@ -34,11 +34,10 @@
 
   .list p:hover {
     cursor: pointer;
-    filter: drop-shadow(0 0 1em #8CFFFBaa);
+    filter: drop-shadow(0 0 0.68em #8CFFFBaa);
   }
 
   .active {
     color: white;
-    filter: drop-shadow(0 0 1em #8CFFFBaa);
   }
 </style>
