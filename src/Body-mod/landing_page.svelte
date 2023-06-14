@@ -3,6 +3,7 @@
   import Rate from '../lib/rate.svelte'
   import Meter from '../lib/meter.svelte'
   import BA from '../lib/bidask.svelte'
+  import Refer from '../lib/refer.svelte'
   let TT1 = false;
   let TT2 = false;
   let TT3 = false;
@@ -92,7 +93,7 @@
   {#if TT4} <div class="tooltip">為您的交易請求接收實時準確的報價</div> {/if}
 </div>
 <div class="container" on:mouseenter={() => (TT5 = true)}
-  on:mouseleave={() => (TT5 = false)}> <BA/> <p>推薦計劃</p>
+  on:mouseleave={() => (TT5 = false)}> <Refer/> <p>推薦計劃</p>
   {#if TT5} <div class="tooltip">邀請您的朋友使用 BlockPul​​se OTC 進行交易並獲得獎勵以及高達 30% 的現金或加密佣金</div> {/if}
 </div>
 
