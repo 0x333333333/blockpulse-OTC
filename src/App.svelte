@@ -8,8 +8,7 @@
 
 <main>
 
-  <Header/>
-  <Body/>
+  <Body/><Header/>
 
 </main>
 

@@ -68,7 +68,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0px;
+  margin-top: 90px;
+  top: 90px;
 }
 .big-container {
   display: flex;

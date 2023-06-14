@@ -1,6 +1,6 @@
 <script>
   import RAQ from './Body-mod/read-and-quote.svelte'
-  import LAND from './Header-mod/landing_page.svelte'
+  import LAND from './Body-mod/landing_page.svelte'
   let page = 1;
 
 </script>
@@ -29,6 +29,7 @@
     gap: 30px;
     z-index: 9999;
     display: flex;
+    background-color: #242526;
   }
 
   .list p:hover {
