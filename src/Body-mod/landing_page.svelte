@@ -1,8 +1,23 @@
 <script>
   import Money from '../lib/money.svelte'
+  import Rate from '../lib/rate.svelte'
+  let TT1 = false;
+  let TT2 = false;
+
 </script>
 
 <style>
+.tooltip {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
 .big-wrapper {
   display: flex;
   flex-direction: column;
@@ -23,8 +38,6 @@
   justify-content: center;
   width: 120px; /* 調整容器的寬度 */
   height: 120px; /* 調整容器的高度 */
-  border-radius: 10px; /* 設置圓角半徑 */
-  background-color: #333333; /* 設置背景顏色 */
 }
 
 .container svg {
@@ -53,12 +66,19 @@ p:hover {
 <p class="small_white">通過 BlockPul​​se OTC 擁抱加密交易的未來。享受實體場所交易的便利和安全。</p><br>
 <button>🚀 開始 ➜</button>
 <p>➖➖➖➖➖➖➖➖➖➖➖➖➖</p>
-<p>💡我們的服務💡
+<p>💡我們的服務💡</p> <br>
 
-<div class="container"> <Money/>dsds</div>
-<p>探索我們專為您的終極加密貨幣交易體驗而設計的服務。
-<p>1. 💱港幣現金交易
-<p>訪問我們在香港的實際位置以進行安全的面對面交易。了解更多 ➜
+<!-- <p>探索我們專為您的終極加密貨幣交易體驗而設計的服務。</p> -->
+<div class="container" on:mouseenter={() => (TT1 = true)}
+  on:mouseleave={() => (TT1 = false)}> <Money/> <br> 港幣現金交易
+  {#if TT1} <div class="tooltip">訪問我們在香港的實際位置以進行安全的面對面交易</div> {/if}
+</div>
+<div class="container" on:mouseenter={() => (TT2 = true)}
+  on:mouseleave={() => (TT2 = false)}> <Rate/> <br> 實時匯率
+  {#if TT2} <div class="tooltip">訪問我們在香港的實際位置以進行安全的面對面交易</div> {/if}
+</div>
+
+
 <p>2. 📈實時匯率
 <p>隨時了解最準確和實時的加密貨幣匯率。了解更多 ➜
 <p>3. 🛠️場外交易儀錶盤
