@@ -1,12 +1,41 @@
 <script>
+  import Money from '../lib/money.svelte'
 </script>
 
 <style>
-.container-wrapper {
+.big-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 90px;
+}
+.container-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 120px; /* 調整容器的寬度 */
+  height: 120px; /* 調整容器的高度 */
+  border-radius: 10px; /* 設置圓角半徑 */
+  background-color: #333333; /* 設置背景顏色 */
+}
+
+.container svg {
+  width: 100px; /* 調整 SVG 的寬度 */
+  height: 100px; /* 調整 SVG 的高度 */
+}
+
+.container p {
+  margin-top: 10px; /* 調整文字與 SVG 的間距 */
+  font-size: 16px; /* 調整文字的字體大小 */
+  text-align: center; /* 將文字置中 */
 }
 .small_white {
   color: white;
@@ -17,7 +46,7 @@ p:hover {
 }
 </style>
 
-<div class="container-wrapper">
+<div class="big-wrapper">
 <p>🌐 BlockPul​​se 場外交易🌐</p>
 <p>➖➖➖➖➖➖➖➖➖➖➖➖➖</p>
 <p>💼歡迎來到更順暢的交易體驗💼</p>
@@ -25,6 +54,8 @@ p:hover {
 <button>🚀 開始 ➜</button>
 <p>➖➖➖➖➖➖➖➖➖➖➖➖➖</p>
 <p>💡我們的服務💡
+
+<div class="container"> <Money/>dsds</div>
 <p>探索我們專為您的終極加密貨幣交易體驗而設計的服務。
 <p>1. 💱港幣現金交易
 <p>訪問我們在香港的實際位置以進行安全的面對面交易。了解更多 ➜
