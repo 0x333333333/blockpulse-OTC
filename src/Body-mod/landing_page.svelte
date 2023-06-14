@@ -1,8 +1,14 @@
 <script>
   import Money from '../lib/money.svelte'
   import Rate from '../lib/rate.svelte'
+  import Meter from '../lib/meter.svelte'
+  import BA from '../lib/bidask.svelte'
   let TT1 = false;
   let TT2 = false;
+  let TT3 = false;
+  let TT4 = false;
+  let TT5 = false;
+
 
 </script>
 
@@ -36,8 +42,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 120px; /* 調整容器的寬度 */
-  height: 120px; /* 調整容器的高度 */
+  width: 150px; /* 調整容器的寬度 */
+  height: 150px; /* 調整容器的高度 */
 }
 
 .container svg {
@@ -46,8 +52,8 @@
 }
 
 .container p {
-  margin-top: 10px; /* 調整文字與 SVG 的間距 */
-  font-size: 16px; /* 調整文字的字體大小 */
+  margin-top: 14px; /* 調整文字與 SVG 的間距 */
+  font-size: 0.9em; /* 調整文字的字體大小 */
   text-align: center; /* 將文字置中 */
 }
 .small_white {
@@ -60,29 +66,37 @@ p:hover {
 </style>
 
 <div class="big-wrapper">
-<p>🌐 BlockPul​​se 場外交易🌐</p>
-<p>➖➖➖➖➖➖➖➖➖➖➖➖➖</p>
+<!-- <h2>🌐 BlockPul​​se 場外交易🌐</h2> -->
 <p>💼歡迎來到更順暢的交易體驗💼</p>
-<p class="small_white">通過 BlockPul​​se OTC 擁抱加密交易的未來。享受實體場所交易的便利和安全。</p><br>
+<p class="small_white">通過 BlockPul​​se OTC 擁抱加密交易的未來。<br>享受實體場所交易的便利和安全。</p><br>
 <button>🚀 開始 ➜</button>
 <p>➖➖➖➖➖➖➖➖➖➖➖➖➖</p>
-<p>💡我們的服務💡</p> <br>
+<!-- <p>💡我們的服務💡</p> <br> -->
+
+<div class="container-wrapper">
 
 <!-- <p>探索我們專為您的終極加密貨幣交易體驗而設計的服務。</p> -->
 <div class="container" on:mouseenter={() => (TT1 = true)}
-  on:mouseleave={() => (TT1 = false)}> <Money/> <br> 港幣現金交易
+  on:mouseleave={() => (TT1 = false)}> <Money/> <p>港幣現金交易</p>
   {#if TT1} <div class="tooltip">訪問我們在香港的實際位置以進行安全的面對面交易</div> {/if}
 </div>
 <div class="container" on:mouseenter={() => (TT2 = true)}
-  on:mouseleave={() => (TT2 = false)}> <Rate/> <br> 實時匯率
-  {#if TT2} <div class="tooltip">訪問我們在香港的實際位置以進行安全的面對面交易</div> {/if}
+  on:mouseleave={() => (TT2 = false)}> <Rate/> <p>實時匯率</p>
+  {#if TT2} <div class="tooltip">隨時了解最準確和實時的加密貨幣匯率</div> {/if}
+</div>
+<div class="container" on:mouseenter={() => (TT3 = true)}
+  on:mouseleave={() => (TT3 = false)}> <Meter/> <p>場外交易儀錶盤</p>
+  {#if TT3} <div class="tooltip">全面且用戶友好的交易儀表板，可實現高效交易</div> {/if}
+</div>
+<div class="container" on:mouseenter={() => (TT4 = true)}
+  on:mouseleave={() => (TT3 = false)}> <BA/> <p>詢價報價系統</p>
+  {#if TT3} <div class="tooltip">全面且用戶友好的交易儀表板，可實現高效交易</div> {/if}
 </div>
 
 
-<p>2. 📈實時匯率
-<p>隨時了解最準確和實時的加密貨幣匯率。了解更多 ➜
-<p>3. 🛠️場外交易儀錶盤
-<p>全面且用戶友好的交易儀表板，可實現高效交易。了解更多 ➜
+</div>
+
+
 <p>4. 📝詢價報價系統
 <p>為您的交易請求接收實時準確的報價。了解更多 ➜
 <p>5. 🎁推薦計劃
