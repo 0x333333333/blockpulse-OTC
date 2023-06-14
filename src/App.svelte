@@ -2,9 +2,9 @@
 
   import Header from './Header.svelte'
   import Body from './Body.svelte'
-  import LIST from './menu_list.svelte'
+  import LIST from './Header-mod/menu_list.svelte'
 
-  let page = 1;
+  export let page = 1;
 
 </script>
 
